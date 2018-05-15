@@ -33,9 +33,10 @@ gulp.task('watch', function() {
 
 gulp.task('server', ['build', 'watch'], function() {
   return gulpConnect.server({
+    host: "0.0.0.0",
     root: [DIST],
     port: process.env.PORT || 3000,
-    https: false
+    https: true
   });
 });
 
